@@ -129,11 +129,13 @@
   <ItemGroup>
     <ClInclude Include="ListaEncadeada.h" />
     <ClInclude Include="No.h" />
+    <ClInclude Include="Pilha.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ListaEncadeada.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="No.cpp" />
+    <ClCompile Include="Pilha.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
