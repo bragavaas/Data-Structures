@@ -1,4 +1,7 @@
 #include "Pilha.h"
+#include "iostream"
+
+using namespace std;
 
 Pilha::Pilha()
 {
@@ -29,18 +32,22 @@ int Pilha::remove_topo()
 
 }
 
-int Pilha::is_vazia()
+bool Pilha::is_vazia()
 {
-	return (topo == 1 ) ? 1 : 0;
+	return (topo == 1 ) ? true : false;
 }
 
-int Pilha::is_cheia()
+bool Pilha::is_cheia()
 {
-	return (topo == (tam-1)) ? 1 : 0;
+	return (topo == (tam-1)) ? true : false;
 }
 
 void Pilha::imprimir()
 {
+	int i; //for loop
+	cout << "Imprimindo pilha: ";
+	for (i = (topo); i >= 0; i--)
+		cout << num[i] << " ";
+	cout << endl;
 }
 
-int 

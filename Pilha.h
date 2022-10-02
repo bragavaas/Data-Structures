@@ -1,6 +1,6 @@
 #pragma once
 
-#define tam 5
+#define tam 100
 class Pilha
 {
 private:
@@ -10,8 +10,8 @@ public:
 	Pilha();
 	int insere_topo(int);
 	int remove_topo();
-	int is_vazia();
-	int is_cheia();
+	bool is_vazia();
+	bool is_cheia();
 	void imprimir();
 };
 
