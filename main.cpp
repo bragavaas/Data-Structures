@@ -1,17 +1,15 @@
+#include "Menu.h"
 #include "ListaEncadeada.h"
 #include "Pilha.h"
-
+#include "Heap.h"
 int main()
 {
-	Pilha p;
-	for (int i = 0; i < 10; i++)
-	{
-		p.insere_topo(i);
-		
-	}
-	p.imprimir();
-	p.remove_topo();
-	p.imprimir();
+	Heap h;
+	int N = h.array.size() / h.array[0];
+	cout << "N: " << N << endl;
+	h.buildHeap(N);
+	h.imprime();
+
 	
 
 }

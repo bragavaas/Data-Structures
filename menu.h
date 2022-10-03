@@ -1,13 +1,14 @@
 #pragma once
-
-class menu
+class Menu
 {
 private:
-	bool inputValidoMenu(int menuOP);
-	 
-
+	static void exibeMenuListaEncadeada();
+	static void exibeMenuPilha();
+	static void exibeMenuHeap();
+	static void exibeMenuHash();
 public:
-	int exibeMenuPrincipal();
-	int inputMenuPrincipal();
+	static void exibeMenuPrincipal();
+	static string inputMenu();
+	static void retornarAoMenuPrincipal();
 };
 
