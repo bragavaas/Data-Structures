@@ -4,9 +4,11 @@
 #include "Heap.h"
 int main()
 {
-	Menu m;
-	m.exibeMenuPrincipal();
+	MaxHeap h;
+	h.inserirItem(10);
+	h.inserirItem(70);
+	h.inserirItem(2);
+	h.inserirItem(200);
 
-	
-
+	h.imprimir();
 }

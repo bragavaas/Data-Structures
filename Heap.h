@@ -18,6 +18,7 @@ public:
 	void inserirItem(int val);
 	void shiftUp(int index);
 	int extrairMax();
+	void imprimir();
 	void shiftDown(int index);
 };
 
