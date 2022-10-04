@@ -8,12 +8,11 @@ using namespace std;
 class ListaEncadeada
 {
 public:
-	void inserir_no_inicio(int param_valor);
-	void busca_por_valor(int param_valor);
+	void inserir_no_inicio();
+	void busca_por_valor();
 	void remover_do_inicio();
+	void imprimir();
 	~ListaEncadeada();
-
-	friend ostream& operator << (ostream& os, const ListaEncadeada& listaencadeada);
 
 private:
 	void clean();

@@ -16,19 +16,22 @@ void ListaEncadeada::clean()
 		head = move(head->proximo);
 	}
 }
-ostream& operator<<(ostream& os, const ListaEncadeada& listaencadeada)
+
+void ListaEncadeada::imprimir()
 {
-	No* head = listaencadeada.head.get();
-	while (head)
+	unique_ptr<No> tmp = move(head);
+	while (tmp)
 	{
-		os << head->valor << ' ';
-		head = head->proximo.get();
+		cout << tmp->valor;
+		tmp = move(tmp->proximo);
 	}
-	return os;
 }
 
-void ListaEncadeada::inserir_no_inicio(int param_v)
+void ListaEncadeada::inserir_no_inicio()
 {
+	cout << "\n Digite o valor a ser inserido no inicio da lista: ";
+	int param_v;
+	cin >> param_v;
 	auto tmp{ make_unique<No>(param_v) };
 	tmp->valor = param_v;
 	tmp->proximo = move(head);
@@ -50,8 +53,11 @@ void ListaEncadeada::remover_do_inicio()
 	}
 }
 
-void ListaEncadeada::busca_por_valor(int param_valor)
+void ListaEncadeada::busca_por_valor()
 {
+	cout << "\n Digite o valor a procurado na lista: ";
+	int param_valor;
+	cin >> param_valor;
 	unique_ptr<No> tmp = move(head);
 	int pos_na_lista = 1;
 

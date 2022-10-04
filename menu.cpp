@@ -5,6 +5,9 @@
 #include <string>
 #include <regex>
 #include "Menu.h"
+#include "ListaEncadeada.h"
+#include "Pilha.h"
+#include "Heap.h"
 
 using namespace std;
 using namespace std::this_thread;
@@ -13,16 +16,64 @@ using namespace std::chrono;
 void Menu::exibeMenuListaEncadeada()
 {
 	system("CLS");
-	cout << "\n\n-------------------------------" << endl;
-	cout << "Menu principal da Lista Encadeada" << endl;
+	cout << "--------------------------------------" << endl;
+	cout << "|LISTA ENCADEADA                     |" << endl;
+	cout << "--------------------------------------" << endl;
+	cout << "|Menu Op| Opcao                       " << endl;
+	cout << "--------------------------------------" << endl;
+	cout << "|   0   | Voltar para Menu principal |" << endl;
+	cout << "|   1   | Inserir no inicio          |" << endl;
+	cout << "|   2   | Remove no Inicio.          |" << endl;
+	cout << "|   3   | Busca por valor            |" << endl;
+	cout << "|   4   | Imprimir lista             |" << endl;
+	cout << "--------------------------------------" << endl;
+
+	bool menu_ativo = true;
+	
+	while (menu_ativo)
+	{
+		int menu_op = Menu::inputMenu(5);
+		cout << "\n Input Menu OP: " << menu_op;
+
+		ListaEncadeada l;
+
+		switch (menu_op)
+		{
+		case 0:
+			cout << "Programa abortado";
+			menu_ativo = false;
+			break;
+		case 1:
+			l.inserir_no_inicio();
+			break;
+		case 2:
+			l.remover_do_inicio();
+			break;
+		case 3:
+			l.busca_por_valor();
+			break;
+		case 4:
+			l.imprimir();
+			break;
+		}
+	}
 
 }
 
 void Menu::exibeMenuPilha()
 {
 	system("CLS");
-	cout << "\n\n-------------------------------" << endl;
-	cout << "Menu principal da Pilha" << endl;
+	cout << "--------------------------------------" << endl;
+	cout << "|LISTA ENCADEADA                     |" << endl;
+	cout << "--------------------------------------" << endl;
+	cout << "|Menu Op| Opcao                       " << endl;
+	cout << "--------------------------------------" << endl;
+	cout << "|   0   | Voltar para Menu principal |" << endl;
+	cout << "|   1   | Inserir no topo            |" << endl;
+	cout << "|   2   | Pilha cheia?               |" << endl;
+	cout << "|   3   | Pilha vazia?               |" << endl;
+	cout << "|   4   | Imprimir pilha             |" << endl;
+	cout << "--------------------------------------" << endl;
 }
 
 void Menu::exibeMenuHeap()
@@ -52,9 +103,31 @@ void Menu::exibeMenuPrincipal()
 	cout << "|   3   | Heap              | Arvore binaria. Similar a uma fila de prioridade.                            |" << endl;
 	cout << "|   4   | Hash Table        | Enderecamento direto através de tabelas de dispersão.                        |" << endl;
 	cout << "-----------------------------------------------------------------------------------------------------------" << endl;
+
+	int menu_op = Menu::inputMenu(5);
+	cout << "Menu OP: " << menu_op;
+
+	switch ( menu_op )
+	{
+		case 0:
+			cout << "Programa abortado";
+			break;
+		case 1:
+			exibeMenuListaEncadeada();
+			break;
+		case 2:
+			exibeMenuPilha();
+			break;
+		case 3:
+			exibeMenuHeap();
+			break;
+		case 4:
+			exibeMenuHash();
+			break;
+	}
 }
 
-string Menu::inputMenu()
+int Menu::inputMenu(int maxVal)
 {
 	string s;
 	bool input_valid = false;
@@ -62,10 +135,10 @@ string Menu::inputMenu()
 	{
 		cout << "\n Entre com seu input: ";
 		getline(cin, s);
-		regex exp("([0-4]{1})");
+		regex exp("([0-"+to_string(maxVal)+"]{1})");
 		(regex_match(s, exp) == true) ? input_valid = true : input_valid = false;
 	}
-	return s;
+	return stoi(s);
 }
 
 void Menu::retornarAoMenuPrincipal()

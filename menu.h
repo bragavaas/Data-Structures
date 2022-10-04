@@ -1,4 +1,7 @@
 #pragma once
+#include <string>
+
+
 class Menu
 {
 private:
@@ -8,7 +11,7 @@ private:
 	static void exibeMenuHash();
 public:
 	static void exibeMenuPrincipal();
-	static string inputMenu();
+	static int inputMenu(int maxVal);
 	static void retornarAoMenuPrincipal();
 };
 
