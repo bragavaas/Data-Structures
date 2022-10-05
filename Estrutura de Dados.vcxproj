@@ -127,6 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="HashTable.h" />
     <ClInclude Include="Heap.h" />
     <ClInclude Include="ListaEncadeada.h" />
     <ClInclude Include="Menu.h" />
@@ -134,6 +135,7 @@
     <ClInclude Include="Pilha.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="HashTable.cpp" />
     <ClCompile Include="Heap.cpp" />
     <ClCompile Include="ListaEncadeada.cpp" />
     <ClCompile Include="main.cpp" />
