@@ -64,6 +64,23 @@ void MaxHeap::shiftDown(int index)
 	 return;
 }
 
+void MaxHeap::max_heapify(vector<int> &input_array, int s, int e)
+{
+	int l = (s << 1) + 1, r = (s << 1) + 2;
+
+	int largest = s;
+	if (l <= e && input_array[l] > input_array[s])
+		largest = l;
+	if (r <= e && input_array[r] > input_array[largest])
+		largest = r;
+
+	if (largest != s)
+	{
+		swap(input_array[s], input_array[largest]);
+		max_heapify(input_array, largest, e);
+	}
+}
+
 int MaxHeap::extrairMax()
 {
 	int maxNum = vetor[1];
@@ -84,4 +101,3 @@ void MaxHeap::imprimir()
 	}
 	cout << endl;
 }
-

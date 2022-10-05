@@ -9,6 +9,6 @@ int main()
 	h.inserirItem(70);
 	h.inserirItem(2);
 	h.inserirItem(200);
-
-	h.imprimir();
+	
+	
 }

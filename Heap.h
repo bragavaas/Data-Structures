@@ -17,9 +17,10 @@ public:
 	int getMaxValor() const { return vetor[1]; };
 	void inserirItem(int val);
 	void shiftUp(int index);
+	void shiftDown(int index);
 	int extrairMax();
 	void imprimir();
-	void shiftDown(int index);
+	void max_heapify(vector<int> &input_array, int s, int e);
 };
 
 
