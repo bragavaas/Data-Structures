@@ -19,7 +19,7 @@ int HashTable::hash_Function(int key)
 	return key % hashGroups;
 }
 
-void HashTable::inserir_Item(int key, string value)
+void HashTable::inserir_Item(int key, pessoa value)
 {
 	int hashValue = hash_Function(key);
 	auto& celula = Tabela[hashValue];
@@ -74,7 +74,7 @@ void HashTable::imprime_Tabela()
 		auto bItr = Tabela[i].begin();
 		for (; bItr != Tabela[i].end(); bItr++)
 		{
-			cout << "CHAVE: " << bItr->first << " Value: " << bItr->second << endl;
+			cout << bItr;
 		}
 	}
 	return;
