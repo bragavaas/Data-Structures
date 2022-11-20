@@ -1,11 +1,14 @@
 #include "HashTable.h"
+#include <iostream>
+
+using namespace std;
 
 bool HashTable::is_vazia() const
 {
 	int soma{};
 	for (int i{}; i < hashGroups; i++)
 	{
-		soma += Tabela[i].size();
+		soma += int(Tabela[i].size());
 	}
 	if (!soma)
 	{
@@ -74,7 +77,7 @@ void HashTable::imprime_Tabela()
 		auto bItr = Tabela[i].begin();
 		for (; bItr != Tabela[i].end(); bItr++)
 		{
-			cout << bItr;
+			cout << "bItr";
 		}
 	}
 	return;

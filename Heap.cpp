@@ -101,3 +101,7 @@ void MaxHeap::imprimir()
 	}
 	cout << endl;
 }
+
+void MaxHeap::filho_dir() {
+	return filho_dir;
+}
