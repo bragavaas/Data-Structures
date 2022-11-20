@@ -5,7 +5,7 @@ class binaryTree
 {
 private:
 	void inserir(int chave, NoBT* no);
-	void remover(NoBT* no);
+	void removerNo(NoBT* no);
 	NoBT* busca(int chave, NoBT* no);
 
 	NoBT* raiz;
@@ -14,7 +14,7 @@ public:
 	~binaryTree();
 
 	void inserir(int chave);
-	void destruir_arvore(NoBT *no);
+	void destruir_arvore();
 	NoBT* busca(int chave);
 
 };
