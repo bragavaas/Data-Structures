@@ -16,8 +16,12 @@ public:
 
 	void inserir(int chave);
 	void destruir_arvore();
+	void removerNo(int k);
 	NoBT* busca(int chave);
 	void inOrderWalk();
+	int buscaMin(NoBT* no);
+	int buscaMax(NoBT* no);
+	int sucessor(NoBT* no);
 
 };
 
