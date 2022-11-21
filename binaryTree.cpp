@@ -1,4 +1,7 @@
 #include "binaryTree.h"
+#include <iostream>
+
+using namespace std;
 
 binaryTree::binaryTree()
 {
@@ -48,18 +51,29 @@ void binaryTree::inserir(int chave, NoBT* no)
 
 NoBT* binaryTree::busca(int chave, NoBT* no)
 {
-	if (no != NULL)
+	if (no == NULL || no->valor == chave)
 	{
-		if (chave == no->valor)
-			return no;
-		if (chave < no->valor)
-			return busca(chave, no->filho_esq);
-		else
-			return busca(chave, no->filho_dir);
+		return no;
 	}
-	else return NULL;
+	else if (chave < no->valor)
+	{
+		busca(chave, no->filho_esq);
+	}
+	else
+	{
+		busca(chave, no->filho_dir);
+	}
 }
 
+void binaryTree::inOrderWalk(NoBT* no)
+{
+	if (no != NULL)
+	{
+		inOrderWalk(no->filho_esq);
+		cout << " " << no->valor;
+		inOrderWalk(no->filho_dir);
+	}
+}
 void binaryTree::inserir(int chave)
 {
 	if (raiz != NULL)
@@ -76,4 +90,9 @@ NoBT* binaryTree::busca(int chave)
 void binaryTree::destruir_arvore()
 {
 	removerNo(raiz);
+}
+
+void binaryTree::inOrderWalk()
+{
+	inOrderWalk(raiz);
 }
