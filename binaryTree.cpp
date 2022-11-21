@@ -33,7 +33,8 @@ void binaryTree::inserir(int chave, NoBT* no)
 		}
 		else
 		{
-			no = new NoBT(chave);
+			no->filho_esq = new NoBT(chave);
+			cout << "Chave inserida: " << chave << endl;
 		}
 	}
 	else if( chave >= no->valor)
@@ -44,7 +45,8 @@ void binaryTree::inserir(int chave, NoBT* no)
 		}
 		else
 		{
-			no = new NoBT(chave);
+			no->filho_dir = new NoBT(chave);
+			cout << "Chave inserida: " << chave << endl;
 		}
 	}
 }
